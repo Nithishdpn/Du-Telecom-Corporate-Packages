@@ -1101,67 +1101,6 @@ body {
     transform: translateY(0);
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .contact-form {
-        padding: 24px;
-    }
-
-    .contact-form h2 {
-        font-size: 24px;
-        margin-bottom: 20px;
-    }
-
-    .form-group {
-        margin-bottom: 14px;
-    }
-
-    .form-group input,
-    .form-group textarea {
-        padding: 10px 14px;
-        font-size: 14px;
-    }
-
-    .form-group textarea {
-        height: 100px;
-    }
-
-    .btn-submit {
-        padding: 12px;
-        font-size: 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    .contact-form {
-        padding: 20px;
-    }
-
-    .contact-form h2 {
-        font-size: 22px;
-        margin-bottom: 16px;
-    }
-
-    .form-group {
-        margin-bottom: 12px;
-    }
-
-    .form-group input,
-    .form-group textarea {
-        padding: 10px 12px;
-        font-size: 14px;
-    }
-
-    .form-group textarea {
-        height: 90px;
-    }
-
-    .btn-submit {
-        padding: 12px;
-        font-size: 14px;
-    }
-}
-
 .best-offers {
     padding: 60px 48px;
     background-color: white;
@@ -1378,6 +1317,31 @@ body {
     color: var(--white);
 }
 
+.specific-areas{
+    padding: 12px 24px;
+    background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-blue) 100%);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.specific-areas:hover{
+     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    color: var(--white);
+}
+
 @media (max-width: 768px) {
     .help-banner {
         padding: 20px;
@@ -1495,22 +1459,25 @@ body {
 }
 
 .plans-grid {
-    margin-top: 20px;
+    margin-top: 60px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 50px;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 60px auto 60px auto;
     width: 100%;
     position: relative;
     z-index: 1;
     padding: 20px;
+    justify-items: center;
 }
+
+
 
 .plan-card {
     background: white;
     border-radius: 16px;
-    overflow: hidden;
+    overflow: visible;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
@@ -1556,16 +1523,64 @@ body {
 }
 
 .plan-badge {
-    position: absolute;
+   
     top: 20px;
     left: 20px;
-    background: #E6007E;
-    color: white;
+   
+    color: rgb(4, 120, 197);
     padding: 8px 16px;
     border-radius: 20px;
+   
     font-size: 14px;
     font-weight: 500;
     z-index: 1;
+}
+
+.plan-badge-round {
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #E6007E, #9B2D93);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.1;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(230, 0, 126, 0.3);
+    animation: pulse 2s infinite;
+    border: 3px solid white;
+}
+
+.plan-badge-round .offer-percent {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.plan-badge-round .offer-text {
+    font-size: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 4px 12px rgba(230, 0, 126, 0.3);
+    }
+    50% {
+        box-shadow: 0 4px 20px rgba(230, 0, 126, 0.6);
+    }
+    100% {
+        box-shadow: 0 4px 12px rgba(230, 0, 126, 0.3);
+    }
 }
 
 .plan-content {
@@ -1618,7 +1633,7 @@ body {
     }
 
 .plan-benefits {
-    padding: 24px 0;
+    /* padding: 24px 0; */
     border-top: 1px solid #eee;
     border-bottom: 1px solid #eee;
 }
@@ -1766,6 +1781,25 @@ body {
         max-width: 400px;
         gap: 35px;
         padding: 10px;
+    }
+    
+    .plan-badge-round {
+        width: 60px;
+        height: 60px;
+        top: -30px;
+        right: -30px;
+        font-size: 8px;
+        border: 2px solid white;
+    }
+    
+    .plan-badge-round .offer-percent {
+        font-size: 12px;
+        margin-bottom: 1px;
+    }
+    
+    .plan-badge-round .offer-text {
+        font-size: 6px;
+        line-height: 1;
     }
 }
 
@@ -2054,4 +2088,4 @@ body {
     .countdown-label {
         font-size: 12px;
     }
-} 
+}
